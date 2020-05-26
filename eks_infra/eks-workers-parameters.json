@@ -1,0 +1,26 @@
+[
+    {
+        "ParameterKey": "ClusterName",
+        "ParameterValue": "EKSCluster-EPqMUGUh10j5"
+    },
+    {
+        "ParameterKey": "StackName",
+        "ParameterValue": "Capstone-Cluster"
+    },
+    {
+        "ParameterKey": "BootstrapArguments",
+        "ParameterValue": ""
+    },
+    {
+        "ParameterKey": "NodeGroupName",
+        "ParameterValue": "eks-workers"
+    },
+    {
+        "ParameterKey": "NodeImageId",
+        "ParameterValue": ""
+    },
+    {
+        "ParameterKey": "NodeInstanceType",
+        "ParameterValue": "t3.medium"
+    }
+]
