@@ -9,6 +9,10 @@ Parameters:
     Type: String
     Description: Name that will be prefixed to resource names.
 
+  KeyName:
+    Type: "AWS::EC2::KeyPair::KeyName"
+    Description: The EC2 Key Pair to allow SSH access to the instances
+
   BootstrapArguments:
     Type: String
     Default: ""
@@ -40,7 +44,7 @@ Parameters:
 
   NodeImageIdSSMParam:
     Type: "AWS::SSM::Parameter::Value<AWS::EC2::Image::Id>"
-    Default: /aws/service/eks/optimized-ami/1.15/amazon-linux-2/recommended/image_id
+    Default: /aws/service/eks/optimized-ami/1.14/amazon-linux-2/recommended/image_id
     Description: AWS Systems Manager Parameter Store parameter of the AMI ID for the worker node instances.
 
   NodeInstanceType:
@@ -154,12 +158,14 @@ Resources:
     Properties:
       Description: Allow worker Kubelets and pods to receive communication from the cluster control plane
       FromPort: 1025
+      FromPort: 31910
       GroupId: !Ref NodeSecurityGroup
       IpProtocol: tcp
       SourceSecurityGroupId:
         Fn::ImportValue:
           !Sub "${StackName}-SG"
       ToPort: 65535
+      ToPort: 31910
 
   NodeSecurityGroupFromControlPlaneOn443Ingress:
     Type: "AWS::EC2::SecurityGroupIngress"
@@ -190,6 +196,7 @@ Resources:
         - Ref: NodeImageId
         - Ref: NodeImageIdSSMParam
       InstanceType: !Ref NodeInstanceType
+      KeyName: !Ref KeyName
       SecurityGroups:
         - Ref: NodeSecurityGroup
       UserData:
