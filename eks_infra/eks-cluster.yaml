@@ -26,7 +26,7 @@ Resources:
   EKSCluster:
     Type: AWS::EKS::Cluster
     Properties:
-      Version: '1.15'
+      Version: '1.13'
       RoleArn: !GetAtt EksServiceRole.Arn
       ResourcesVpcConfig:
         SecurityGroupIds:

@@ -1,11 +1,15 @@
 [
     {
         "ParameterKey": "ClusterName",
-        "ParameterValue": "EKSCluster-EPqMUGUh10j5"
+        "ParameterValue": "EKSCluster-uzDwU3tgYLJ4"
     },
     {
         "ParameterKey": "StackName",
         "ParameterValue": "Capstone-Cluster"
+    },
+    {
+        "ParameterKey": "KeyName",
+        "ParameterValue": "jenkins_capstone"
     },
     {
         "ParameterKey": "BootstrapArguments",
