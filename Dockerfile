@@ -1,4 +1,5 @@
-FROM nginx:1.17-alpine
+# Latest Nginx for better performance
+FROM nginx:1.17:latest
 
 COPY index.html /usr/share/nginx/html
 
