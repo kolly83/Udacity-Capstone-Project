@@ -1,5 +1,5 @@
 # Latest Nginx for better performance
-FROM nginx:1.17:latest
+FROM nginx:latest
 
 COPY index.html /usr/share/nginx/html
 
