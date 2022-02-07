@@ -1,6 +1,6 @@
 # Udacity Capstone-Project
 ## Introduction
-This is the final project which is required to graduate the [Cloud DevOps Engineer Nanodegree](https://www.udacity.com/course/cloud-dev-ops-nanodegree--nd9991). I have choosed rolling deployment for my project. The application is Nginx “Hello World based on Docker. 
+This is the final project which is required to graduate the [Cloud DevOps Engineer Nanodegree](https://www.udacity.com/course/cloud-dev-ops-nanodegree--nd9991). I have chosen rolling deployment for my project. The application is Nginx “Hello World based on Docker. 
 I have setup a Kubernetes cluster hosted on AWS EKS by CloudFormation. I have used templates provided by AWS to form the CloudFormation scripts.
 
 Also I've built and pushed the Docker image to Dockerhub using Jenkins Pipeline include linting step in order to check the application html syntax.
